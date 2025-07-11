@@ -1,15 +1,16 @@
-# First principles calculations: Brayton cycle, station analysis, energy balances
+import numpy as np
 
-class ThermodynamicsEngine:
-    def __init__(self, engine_params):
-        self.params = engine_params
+R = 287.058  # J/kg/K for air
+gamma = 1.4
 
-    def calculate_cycle(self, inlet_conditions):
-        # Apply Brayton Cycle mathematics here
-        pass
+def isentropic_temperature_ratio(Mach, gamma=1.4):
+    return 1 + 0.5 * (gamma - 1) * Mach**2
 
-    def calculate_thrust(self):
-        # F = mdot * (Ve - V0) + (Pe - P0) * Ae
-        pass
+def stagnation_temperature(T_static, Mach, gamma=1.4):
+    return T_static * isentropic_temperature_ratio(Mach, gamma)
 
-    # Additional SFC, efficiency, temperature/pressure computations...
+def stagnation_pressure(p_static, Mach, gamma=1.4):
+    return p_static * isentropic_temperature_ratio(Mach, gamma)**(gamma/(gamma-1))
+
+def ideal_gas_density(P, T, R=R):
+    return P / (R * T)
