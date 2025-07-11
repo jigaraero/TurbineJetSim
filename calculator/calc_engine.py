@@ -1,14 +1,18 @@
-# Command-line and in-game performance calculator
+from engine.thermodynamics import *
+from engine.performance import *
 
-class PerformanceCalculator:
-    def __init__(self):
-        # Setup for engine and flight parameters
-        pass
-
-    def display(self, screen):
-        # Draw calculator GUI onto pygame screen or output to console
-        pass
-
-    def calculate_metrics(self, flight_conditions, engine_params):
-        # Compute thrust, SFC, efficiency, etc.
-        pass
+def calculate_performance(inputs):
+    # Parse input dict for params like mass_flow, V_exit etc.
+    thrust_output = thrust(
+        mass_flow=inputs["mass_flow"],
+        V_exit=inputs["V_exit"],
+        V_inlet=inputs["V_inlet"],
+        P_exit=inputs["P_exit"],
+        P_ambient=inputs["P_ambient"],
+        A_exit=inputs["A_exit"]
+    )
+    return {
+        "thrust": thrust_output,
+        "sfc": sfc(inputs["fuel_flow"], thrust_output),
+        # add more results
+    }
