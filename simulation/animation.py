@@ -1,14 +1,9 @@
-# Handles pygame animation of the jet engine
+import pygame
 
-class JetEngineAnimation:
-    def __init__(self, screen):
-        self.screen = screen
-        # TODO: Initialize graphics/sprites
-
-    def update(self):
-        # TODO: Update rotating components, respond to parameter changes
-        pass
-
-    def draw(self):
-        # TODO: Visualize jet engine, parameters, performance metrics
-        pass
+def animate_engine(params):
+    # A simple placeholder visualization with rotating turbine etc.
+    pygame.init()
+    screen = pygame.display.set_mode((800, 600))
+    # Draw engine cross-section, animated values, etc.
+    # Use params to update animation each frame
+    pygame.quit()
