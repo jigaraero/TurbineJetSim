@@ -41,7 +41,7 @@ class Thermodynamics:
             "T0": T0, "P0": P0, "V0": V0,
             "T2": T2, "P2": P2, "P2": P2,
             "T3": T3,
-            "T4": T4, T4, "P4": P4, "P4": P4,
+            "T4": T4, "P4": P4, "P4": P4,
             "V_exit": V_exit,
             "m_fuel": m_fuel
         }
