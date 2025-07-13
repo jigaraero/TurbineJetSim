@@ -1,4 +1,7 @@
 {
-  "sea_level": {"T": 288.15, "P": 101325},
-  "5000m": {"T": 255.65, "P": 54019}
+  "sea_level": {
+    "pressure": 101325,
+    "temperature": 288
+  },
+  "lapse_rate": 0.0065
 }
