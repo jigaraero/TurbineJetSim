@@ -1,6 +1,9 @@
 {
-  "compressor": {"pr": 12, "eta": 0.87},
-  "turbine": {"eta": 0.89},
-  "nozzle": {"eta": 0.95},
-  "max_thrust": 24000
+  "pressure_ratio": 10,
+  "turbine_inlet_temp": 1400,
+  "efficiencies": {
+    "compressor": 0.85,
+    "turbine": 0.88,
+    "nozzle": 0.95
+  }
 }
